@@ -65,7 +65,7 @@ uint8_t PS_33D_I2C::measure()
         return 1;
     }
 
-    pressure = (_buffer[3] << 16) + (_buffer[2] << 8) + _buffer[1];
+    pressure = (_buffer[1] << 16) + (_buffer[2] << 8) + _buffer[3];
     /// Status
     status = _buffer[0];
 
