@@ -41,7 +41,7 @@ class PS_33D_I2C
 
 public:
   void begin(TwoWire &wirePort = Wire); //By default use Wire port
-  uint8_t measure;
+  uint8_t measure(void);
   
   uint8_t status;
   uint32_t pressure;
