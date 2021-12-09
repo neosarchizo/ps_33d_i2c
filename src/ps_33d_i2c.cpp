@@ -65,7 +65,10 @@ uint8_t PS_33D_I2C::measure()
         return 1;
     }
 
-    pressure = (_buffer[1] << 16) + (_buffer[2] << 8) + _buffer[3];
+    uint32_t adc_val = (_buffer[1] << 16) + (_buffer[2] << 8) + _buffer[3];
+
+    pressure = (adc_val - 0x800000) * (0x07d0) / (0xb33333);
+
     /// Status
     status = _buffer[0];
 

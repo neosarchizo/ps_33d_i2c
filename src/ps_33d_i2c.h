@@ -44,7 +44,7 @@ public:
   uint8_t measure(void);
   
   uint8_t status;
-  uint32_t pressure;
+  double pressure;
 
 private:
   uint8_t _buffer[32];
