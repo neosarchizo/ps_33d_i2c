@@ -16,8 +16,10 @@ void loop()
   {
     Serial.print("pressure : ");
     Serial.println(ps_33d_i2c.pressure);
-    Serial.print("status : ");
-    Serial.println(ps_33d_i2c.status);
+    Serial.print("status (busy) : ");
+    Serial.println(ps_33d_i2c.status.busy);
+    Serial.print("status (power) : ");
+    Serial.println(ps_33d_i2c.status.power);
   }
   delay(1000);
 }

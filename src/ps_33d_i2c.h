@@ -36,19 +36,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // #define PS_33D_DEBUG
 
+enum PS_33D_I2C_BUSY
+{
+  PS_33D_I2C_BUSY_SLEEP,
+  PS_33D_I2C_BUSY_ACTIVE,
+};
+
+enum PS_33D_I2C_POWER
+{
+  PS_33D_I2C_POWER_OFF,
+  PS_33D_I2C_POWER_ON,
+};
+
+struct PS_33D_I2C_STATUS
+{
+  unsigned uint8_t : 5;
+  unsigned uint8_t busy : 1;
+  unsigned uint8_t power : 1;
+};
+
 class PS_33D_I2C
 {
 
 public:
-  void begin(TwoWire &wirePort = Wire); //By default use Wire port
+  void begin(TwoWire &wirePort = Wire); // By default use Wire port
   uint8_t measure(void);
-  
-  uint8_t status;
+
+  PS_33D_I2C_STATUS status;
   double pressure;
 
 private:
   uint8_t _buffer[32];
-  TwoWire *_i2cPort; //The generic connection to user's chosen I2C hardware
+  TwoWire *_i2cPort; // The generic connection to user's chosen I2C hardware
 };
 
 #endif
