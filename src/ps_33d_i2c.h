@@ -50,9 +50,9 @@ enum PS_33D_I2C_POWER
 
 struct PS_33D_I2C_STATUS
 {
-  unsigned uint8_t : 5;
-  unsigned uint8_t busy : 1;
-  unsigned uint8_t power : 1;
+  uint8_t : 5;
+  uint8_t busy : 1;
+  uint8_t power : 1;
 };
 
 class PS_33D_I2C
