@@ -36,23 +36,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // #define PS_33D_DEBUG
 
-enum PS_33D_I2C_BUSY
-{
-  PS_33D_I2C_BUSY_SLEEP,
-  PS_33D_I2C_BUSY_ACTIVE,
-};
+#define PS_33D_I2C_BUSY_SLEEP 0
+#define PS_33D_I2C_BUSY_ACTIVE 1
 
-enum PS_33D_I2C_POWER
-{
-  PS_33D_I2C_POWER_OFF,
-  PS_33D_I2C_POWER_ON,
-};
+#define PS_33D_I2C_POWER_OFF 0
+#define PS_33D_I2C_POWER_ON 1
 
 struct PS_33D_I2C_STATUS
 {
   uint8_t : 5;
   uint8_t busy : 1;
   uint8_t power : 1;
+  :1;
 };
 
 class PS_33D_I2C
