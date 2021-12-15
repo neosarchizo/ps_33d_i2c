@@ -1,4 +1,4 @@
-# Syntax Coloring for CM1106_I2C Library
+# Syntax Coloring for PS_33D_I2C Library
 # Datatypes (KEYWORD1)
 PS_33D_I2C	KEYWORD1
 
